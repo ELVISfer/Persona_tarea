@@ -11,8 +11,9 @@ export const TareaS1 = () => {
 
   const [dataForm, setDataForm] = useState({
     nombre: "",
+    apellido:"",
     edad: "0",
-    fecha_ingreso: "",
+    fecha: "",
     finish: false,
 
   });
@@ -37,8 +38,9 @@ export const TareaS1 = () => {
 
     setDataForm({
       nombre: "",
+      apellido:"",
       edad: "0",
-      fecha_ingreso: "",
+      fecha: "",
       finish: false
     });
     setBoolEdit(false);
@@ -142,6 +144,17 @@ export const TareaS1 = () => {
           />
           <label htmlFor="floatingInput">Nombre</label>
         </div>
+         <div className="form-floating mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Apellido"
+            value={dataForm.apellido}
+            name="apellido"
+            onChange={formChange}
+          />
+          <label htmlFor="floatingInput">Apellido</label>
+        </div>
 
         <div className="form-floating mb-3">
           <input
@@ -161,7 +174,7 @@ export const TareaS1 = () => {
             className="form-control"
             placeholder="Fecha"
             value={dataForm.fecha_ingreso}
-            name="fecha_ingreso"
+            name="fecha"
             onChange={formChange}
           />
           <label htmlFor="floatingPassword">Fecha</label>
@@ -176,6 +189,7 @@ export const TareaS1 = () => {
           <tr>
             <td>Id</td>
             <td>Nombre</td>
+            <td>Apellido</td>
             <td>Edad</td>
             <td>Fecha</td>
             <td>Finish</td>
@@ -187,8 +201,9 @@ export const TareaS1 = () => {
             <tr key={x.id}>
               <td>{x.id}</td>
               <td>{x.nombre}</td>
+              <td>{x.apellido}</td>
               <td>{x.edad}</td>
-              <td>{x.fecha_ingreso}</td>
+              <td>{x.fecha}</td>
               <td>{x.finish ? "Yes" : "No"}</td>
               <td>
                 <button
